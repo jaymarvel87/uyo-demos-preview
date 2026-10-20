@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DailyFresh Mart - Groceries, Fresh Food &amp; Household Essentials in Uyo</title>
+<meta name="description" content="DailyFresh Mart is a fictional demo supermarket website designed as a sample for local businesses in Uyo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1c1214;
+  --muted:#70605f;
+  --accent:#b91c1c;
+  --tint:#fdf4f3;
+  --line:#f0ddda;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:'Barlow Semi Condensed',system-ui,-apple-system,sans-serif;background:#fff;color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;font-size:17px}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1080px,94%);margin:0 auto}
+
+.demo-strip{background:var(--ink);color:#fff;text-align:center;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.5rem 1rem}
+
+/* red store bar */
+.storebar{background:var(--accent);color:#fff}
+.storebar-in{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 0}
+.storename{font-weight:700;font-size:1.35rem;letter-spacing:.01em;text-decoration:none}
+.openpill{font-size:.8rem;font-weight:600;background:rgba(255,255,255,.16);padding:6px 12px;border-radius:6px;white-space:nowrap}
+
+/* list-first hero: the practical action */
+.listblock{padding:2.2rem 0 2rem;border-bottom:1px solid var(--line)}
+.listblock-grid{display:grid;gap:1.6rem;align-items:center}
+@media(min-width:760px){.listblock-grid{grid-template-columns:1.1fr 1fr}}
+.listblock h1{font-size:clamp(1.7rem,5vw,2.4rem);font-weight:700;line-height:1.1;margin-bottom:.6rem}
+.listblock p{color:var(--muted);margin-bottom:1rem}
+.listblock .steps{font-size:.95rem;margin-bottom:1.3rem}
+.listblock .steps li{list-style:none;padding:.35rem 0 .35rem 1.7rem;position:relative}
+.listblock .steps li b{color:var(--accent)}
+.listblock .steps li::before{content:attr(data-n);position:absolute;left:0;top:.35rem;width:1.15rem;height:1.15rem;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;text-align:center;line-height:1.15rem;border-radius:50%}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;font-size:1rem;padding:14px 30px;border-radius:6px;border:none;cursor:pointer}
+.btn:hover{background:#991b1b}
+.listblock img{border-radius:10px;width:100%;aspect-ratio:16/10;object-fit:cover}
+
+/* the aisles directory */
+.aisles{padding:2.4rem 0}
+.aisles h2{font-size:1.5rem;font-weight:700;margin-bottom:.2rem}
+.aisles .sub2{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem}
+.aisle{display:flex;justify-content:space-between;gap:1rem;padding:1rem 1.1rem;border-bottom:1px solid var(--line)}
+.aisle:nth-child(odd){background:var(--tint)}
+.aisle .a-name{font-weight:700;font-size:1.05rem}
+.aisle .a-items{color:var(--muted);font-size:.88rem;margin-top:.15rem}
+.aisle .a-price{font-weight:700;white-space:nowrap;text-align:right;color:var(--accent)}
+.aisle .a-price small{display:block;color:var(--muted);font-weight:500;font-size:.75rem}
+
+/* photos */
+.photos{padding:0 0 2.4rem}
+.pgrid{display:grid;grid-template-columns:2fr 1fr;gap:8px}
+.pgrid img{width:100%;height:100%;object-fit:cover;border-radius:8px}
+.pgrid .tall{grid-row:span 2}
+.pgrid .stack{display:grid;gap:8px}
+
+/* send your list */
+.send{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.4rem 0}
+.send-grid{display:grid;gap:1.6rem}
+@media(min-width:760px){.send-grid{grid-template-columns:1fr 1.2fr}}
+.send h2{font-size:1.5rem;font-weight:700;margin-bottom:.4rem}
+.send .side p{color:var(--muted);margin-bottom:.8rem}
+.send .side ul{list-style:none}
+.send .side li{padding:.4rem 0 .4rem 1.4rem;position:relative;font-size:.95rem}
+.send .side li::before{content:"";position:absolute;left:0;top:.95rem;width:8px;height:8px;background:var(--accent);border-radius:2px}
+.send form{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem}
+label{display:block;font-size:.82rem;font-weight:700;margin:0 0 .3rem}
+input,textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:8px;font:inherit;background:#fff;margin-bottom:.9rem}
+textarea{min-height:120px;resize:vertical}
+input:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.radio-row{display:flex;gap:18px;margin-bottom:1rem}
+.radio-row label{display:flex;align-items:center;gap:7px;font-weight:600;font-size:.9rem;margin:0}
+.radio-row input{width:auto;margin:0}
+.form-note{font-size:.78rem;color:var(--muted);margin-top:.7rem}
+
+/* store info */
+.info{padding:2rem 0 2.4rem}
+.info-grid{display:grid;gap:1rem}
+@media(min-width:700px){.info-grid{grid-template-columns:repeat(3,1fr)}}
+.info b{display:block;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:.2rem}
+.info p{font-size:.95rem;color:var(--muted)}
+.info a{color:var(--accent);font-weight:700}
+
+footer{border-top:1px solid var(--line);padding:1.6rem 0 2.2rem;font-size:.8rem;color:var(--muted);text-align:center}
+footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<div class="demo-strip">Demo website - a sample for local businesses</div>
+
+<header class="storebar">
+  <div class="wrap storebar-in">
+    <a class="storename" href="#top">DailyFresh Mart</a>
+    <span class="openpill">Open today 7:30 - 21:00</span>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="listblock">
+    <div class="wrap listblock-grid">
+      <div>
+        <h1>Send us your list. We pack it. You pick up.</h1>
+        <p>DailyFresh is a neighbourhood supermarket on Atiku Abubakar Avenue. Groceries, fresh food and household basics at fair prices.</p>
+        <ul class="steps">
+          <li data-n="1">WhatsApp your list <b>before 4 PM</b> for same-day pickup.</li>
+          <li data-n="2">We pack it in <b>2 - 3 hours</b> and confirm your total.</li>
+          <li data-n="3">Pick up, or we deliver within Uyo <b>from ₦1,000</b> - free over ₦50,000.</li>
+        </ul>
+        <a class="btn" href="#send">Send your list on WhatsApp</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?auto=format&fit=crop&w=1000&q=80" alt="Bright supermarket aisle with fully stocked shelves" fetchpriority="high">
+    </div>
+  </section>
+
+  <section class="aisles" id="aisles">
+    <div class="wrap">
+      <h2>In the store</h2>
+      <p class="sub2">Restocked every morning. Bulk and carton orders welcome.</p>
+      <div class="aisle"><div><div class="a-name">Fresh produce</div><div class="a-items">Tomatoes, peppers, greens and fruit, restocked every morning.</div></div><div class="a-price">from ₦500<small>daily</small></div></div>
+      <div class="aisle"><div><div class="a-name">Grains &amp; staples</div><div class="a-items">Rice, beans, garri and yam in every bag size. Bulk friendly.</div></div><div class="a-price">from ₦1,200<small>per bag</small></div></div>
+      <div class="aisle"><div><div class="a-name">Drinks &amp; dairy</div><div class="a-items">Cold drinks, milk, yoghurt and water by the unit or the carton.</div></div><div class="a-price">from ₦300<small>per unit</small></div></div>
+      <div class="aisle"><div><div class="a-name">Household essentials</div><div class="a-items">Detergent, tissue, cleaning and kitchen basics.</div></div><div class="a-price">from ₦800<small>per item</small></div></div>
+      <div class="aisle"><div><div class="a-name">Toiletries &amp; care</div><div class="a-items">Soap, toothpaste, skin and hair care from trusted brands.</div></div><div class="a-price">from ₦600<small>per item</small></div></div>
+      <div class="aisle"><div><div class="a-name">List &amp; pickup</div><div class="a-items">WhatsApp your list, we pack it, you pick up - or we deliver.</div></div><div class="a-price">free packing<small>2 - 3 hrs</small></div></div>
+    </div>
+  </section>
+
+  <section class="photos">
+    <div class="wrap pgrid">
+      <img class="tall" src="https://images.unsplash.com/photo-1583258292688-d0213dc5a3a8?auto=format&fit=crop&w=700&q=80" alt="Fresh oranges stacked on a store shelf" loading="lazy">
+      <div class="stack">
+        <img src="https://images.unsplash.com/photo-1607349913338-fca6f7fc42d0?auto=format&fit=crop&w=500&q=80" alt="Fruit and vegetables on a display rack" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1760776140488-32fcfab4066a?auto=format&fit=crop&w=500&q=80" alt="Shelves of beverages in a store" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <section class="send" id="send">
+    <div class="wrap send-grid">
+      <div class="side">
+        <h2>Send your shopping list</h2>
+        <p>Type it the way you write it - we do the rest. No app, no account.</p>
+        <ul>
+          <li>We confirm your total before packing. Pay on pickup or by transfer.</li>
+          <li>Delivery within Uyo from ₦1,000 - free on orders over ₦50,000.</li>
+          <li>Free parking in front of the store, space for 20 cars.</li>
+        </ul>
+      </div>
+      <form id="listForm">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" placeholder="e.g. Imaobong" required>
+        <label for="f-list">Your list</label>
+        <textarea id="f-list" name="list" placeholder="e.g. 1 bag of rice (10kg), 2 litres groundnut oil, 6 eggs, detergent, 4 tins of milk..." required></textarea>
+        <div class="radio-row">
+          <label><input type="radio" name="mode" value="Pickup" checked> I'll pick it up</label>
+          <label><input type="radio" name="mode" value="Delivery"> Deliver to me</label>
+        </div>
+        <label for="f-phone">Your phone</label>
+        <input id="f-phone" name="phone" type="tel" placeholder="e.g. 0803 000 0000" required>
+        <button class="btn" type="submit" style="width:100%">Send list on WhatsApp</button>
+        <p class="form-note">Demo form - it opens WhatsApp with a pre-filled message. Nothing is sent until you tap send in WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="info">
+    <div class="wrap info-grid">
+      <div><b>The store</b><p>8 Atiku Abubakar Avenue, Uyo, Akwa Ibom State</p></div>
+      <div><b>Hours</b><p>Mon - Sat, 7:30 - 21:00<br>Sun, 10:00 - 18:00</p></div>
+      <div><b>WhatsApp</b><p><a href="https://wa.me/2347034678518" target="_blank" rel="noopener">0703 467 8518</a><br>Lists, price checks, delivery</p></div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    DailyFresh Mart is a fictional demo. Website designed by
+    <a href="https://excellus-solutionz.netlify.app/" target="_blank" rel="noopener">Excellus Tech Solutionz</a>, Uyo ·
+    WhatsApp <a href="https://wa.me/2347034678518" target="_blank" rel="noopener">0703 467 8518</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('listForm').addEventListener('submit', function(ev){
+  ev.preventDefault();
+  var f = ev.target;
+  var msg = 'Hello DailyFresh Mart! Here is my list:\n'
+    + 'Name: ' + f.name.value + '\n'
+    + 'List: ' + f.list.value + '\n'
+    + 'Mode: ' + f.mode.value + '\n'
+    + 'Phone: ' + f.phone.value;
+  window.open('https://wa.me/2347034678518?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>
