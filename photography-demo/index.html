@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LensCraft Studio - Portraits, Events &amp; Product Photography in Uyo</title>
+<meta name="description" content="LensCraft Studio is a fictional demo photography website designed as a sample for local businesses in Uyo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#101d1b;
+  --muted:#5f726e;
+  --accent:#0f766e;
+  --line:#e4eae8;
+  --tint:#f4f8f7;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:'Inter',system-ui,-apple-system,sans-serif;background:#fff;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1080px,92%);margin:0 auto}
+
+.demo-strip{background:var(--accent);color:#fff;text-align:center;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.5rem 1rem}
+
+/* quiet top */
+.top{display:flex;justify-content:space-between;align-items:baseline;padding:1.4rem 0 1rem;border-bottom:1px solid var(--line)}
+.logo{font-weight:700;font-size:1.05rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none}
+.topnav a{font-size:.82rem;font-weight:600;text-decoration:none;color:var(--muted);margin-left:20px}
+.topnav a:hover{color:var(--accent)}
+
+.oneliner{padding:2rem 0 1.6rem}
+.oneliner h1{font-weight:600;font-size:1.35rem;max-width:34rem;letter-spacing:-.01em}
+.oneliner h1 b{color:var(--accent);font-weight:600}
+.oneliner p{color:var(--muted);font-size:.9rem;margin-top:.4rem}
+
+/* masonry-ish grid: photos lead */
+.work{columns:2;column-gap:10px}
+@media(min-width:700px){.work{columns:3}}
+.work figure{break-inside:avoid;margin-bottom:10px;position:relative}
+.work img{width:100%;border-radius:6px}
+.work figcaption{position:absolute;left:0;right:0;bottom:0;padding:1.4rem .7rem .55rem;font-size:.72rem;color:#fff;background:linear-gradient(transparent,rgba(6,20,18,.65));border-radius:0 0 6px 6px;opacity:0;transition:opacity .25s}
+.work figure:hover figcaption{opacity:1}
+.r43{aspect-ratio:4/5;object-fit:cover}
+.r11{aspect-ratio:1;object-fit:cover}
+.r34{aspect-ratio:3/4;object-fit:cover}
+
+/* sessions & prices */
+.prices{padding:2.8rem 0}
+.label{font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.prices h2{font-size:1.5rem;font-weight:700;letter-spacing:-.01em;margin-bottom:1.4rem}
+.slist{list-style:none}
+.slist li{display:flex;justify-content:space-between;gap:1rem;padding:1rem 0;border-top:1px solid var(--line)}
+.slist li:last-child{border-bottom:1px solid var(--line)}
+.slist .what b{display:block;font-weight:600}
+.slist .what span{font-size:.84rem;color:var(--muted)}
+.slist .howmuch{text-align:right;white-space:nowrap}
+.slist .howmuch b{font-size:1.02rem}
+.slist .howmuch span{display:block;font-size:.74rem;color:var(--muted)}
+.terms{margin-top:1.2rem;font-size:.85rem;color:var(--muted);max-width:36rem}
+.terms p{margin-bottom:.3rem}
+.terms b{color:var(--ink);font-weight:600}
+
+/* booking */
+.book{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.6rem 0}
+.book-grid{display:grid;gap:1.6rem}
+@media(min-width:760px){.book-grid{grid-template-columns:1fr 1fr}}
+.book h2{font-size:1.5rem;font-weight:700;letter-spacing:-.01em;margin-bottom:.5rem}
+.book .side p{color:var(--muted);font-size:.92rem;max-width:30rem;margin-bottom:.8rem}
+.book .side .wa{font-weight:600;color:var(--accent);text-decoration:none}
+label{display:block;font-size:.78rem;font-weight:600;margin:0 0 .3rem}
+input,select{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:6px;font:inherit;background:#fff;margin-bottom:.9rem}
+input:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+.btn{border:none;background:var(--ink);color:#fff;font-weight:600;font-size:.9rem;padding:13px 26px;border-radius:6px;cursor:pointer;width:100%}
+.btn:hover{background:var(--accent)}
+.form-note{font-size:.78rem;color:var(--muted);margin-top:.7rem}
+
+/* studio line */
+.studio{padding:1.8rem 0 2.2rem;font-size:.85rem;color:var(--muted)}
+.studio .row{display:flex;flex-wrap:wrap;gap:.4rem 2rem}
+.studio b{color:var(--ink);font-weight:600}
+.studio a{color:var(--accent);font-weight:600}
+
+footer{border-top:1px solid var(--line);padding:1.6rem 0 2.2rem;font-size:.78rem;color:var(--muted);text-align:center}
+footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<div class="demo-strip">Demo website - a sample for local businesses</div>
+
+<div class="wrap">
+  <header class="top">
+    <a class="logo" href="#top">LensCraft</a>
+    <nav class="topnav">
+      <a href="#work">Work</a>
+      <a href="#prices">Prices</a>
+      <a href="#book">Book</a>
+    </nav>
+  </header>
+
+  <section class="oneliner" id="top">
+    <h1>Portraits, events and product photography in <b>Uyo</b>.</h1>
+    <p>Edited photos in your inbox within 72 hours. Studio on Wellington Bassey Way.</p>
+  </section>
+
+  <section class="work" id="work">
+    <figure><img class="r43" src="https://images.unsplash.com/photo-1611028798552-bbe08e90b788?auto=format&fit=crop&w=600&q=80" alt="Portrait of a woman in a floral dress" fetchpriority="high"><figcaption>Studio portrait</figcaption></figure>
+    <figure><img class="r11" src="https://images.unsplash.com/photo-1627292441194-0280c19e74e4?auto=format&fit=crop&w=600&q=80" alt="Portrait of a woman in a green blazer" loading="lazy"><figcaption>Personal branding</figcaption></figure>
+    <figure><img class="r34" src="https://images.unsplash.com/photo-1500336624523-d727130c3328?auto=format&fit=crop&w=600&q=80" alt="Outdoor portrait of a woman in the city" loading="lazy"><figcaption>Outdoor session</figcaption></figure>
+    <figure><img class="r11" src="https://images.unsplash.com/photo-1611042553484-d61f84d22784?auto=format&fit=crop&w=600&q=80" alt="Portrait of a woman in a white shirt and hat" loading="lazy"><figcaption>Editorial portrait</figcaption></figure>
+    <figure><img class="r43" src="https://images.unsplash.com/photo-1575876402495-fe202e1d3732?auto=format&fit=crop&w=600&q=80" alt="Photographer holding a DSLR camera" loading="lazy"><figcaption>Event coverage</figcaption></figure>
+    <figure><img class="r34" src="https://images.unsplash.com/photo-1628657485319-5865d0f2791d?auto=format&fit=crop&w=600&q=80" alt="Photographer holding a camera, ready to shoot" loading="lazy"><figcaption>On assignment</figcaption></figure>
+    <figure><img class="r11" src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80" alt="Camera and photography gear flat lay" loading="lazy"><figcaption>The kit</figcaption></figure>
+  </section>
+
+  <section class="prices" id="prices">
+    <div class="label">Sessions &amp; prices</div>
+    <h2>What a shoot costs</h2>
+    <ul class="slist">
+      <li>
+        <div class="what"><b>Express headshot</b><span>CV and LinkedIn-ready, 3 edited photos, same-day delivery.</span></div>
+        <div class="howmuch"><b>₦15,000</b><span>20 min</span></div>
+      </li>
+      <li>
+        <div class="what"><b>Portrait session</b><span>45 minutes in studio, 15 edited photos, one outfit change.</span></div>
+        <div class="howmuch"><b>₦35,000</b><span>45 min</span></div>
+      </li>
+      <li>
+        <div class="what"><b>Product shoot</b><span>Clean white-background shots for your shop or Instagram. Up to 20 products.</span></div>
+        <div class="howmuch"><b>₦45,000</b><span>half day</span></div>
+      </li>
+      <li>
+        <div class="what"><b>Outdoor session</b><span>Golden-hour shoot at a location we pick together, 20 edited photos.</span></div>
+        <div class="howmuch"><b>₦50,000</b><span>90 min</span></div>
+      </li>
+      <li>
+        <div class="what"><b>Family &amp; birthday</b><span>Up to 6 people, 25 edited photos, props and backdrop choices.</span></div>
+        <div class="howmuch"><b>₦60,000</b><span>90 min</span></div>
+      </li>
+      <li>
+        <div class="what"><b>Event coverage</b><span>Weddings, birthdays, corporate. 200+ edited photos and a highlight reel.</span></div>
+        <div class="howmuch"><b>₦150,000</b><span>from · full day</span></div>
+      </li>
+    </ul>
+    <div class="terms">
+      <p><b>Booking:</b> 50% deposit holds your slot; balance on the shoot day.</p>
+      <p><b>Delivery:</b> edited photos in 72 hours - express same-day available.</p>
+      <p><b>Changes:</b> reschedule free up to 48 hours before your session.</p>
+    </div>
+  </section>
+</div>
+
+<section class="book" id="book">
+  <div class="wrap book-grid">
+    <div class="side">
+      <h2>Book a session</h2>
+      <p>Tell us what you need shot and when. We confirm your slot on WhatsApp, usually within the hour.</p>
+      <p>Walk-ins are welcome for headshots Tue - Sat. Events are booked ahead only.</p>
+      <p><a class="wa" href="https://wa.me/2347034678518" target="_blank" rel="noopener">WhatsApp 0703 467 8518</a></p>
+    </div>
+    <form id="bookForm">
+      <label for="f-name">Your name</label>
+      <input id="f-name" name="name" type="text" placeholder="e.g. Enobong" required>
+      <label for="f-session">Session</label>
+      <select id="f-session" name="session" required>
+        <option value="">Choose one</option>
+        <option>Portrait session - ₦35,000</option>
+        <option>Family &amp; birthday - ₦60,000</option>
+        <option>Event coverage - from ₦150,000</option>
+        <option>Product shoot - ₦45,000</option>
+        <option>Outdoor session - ₦50,000</option>
+        <option>Express headshot - ₦15,000</option>
+      </select>
+      <label for="f-when">Preferred date</label>
+      <input id="f-when" name="when" type="text" placeholder="e.g. Saturday, 22 Nov" required>
+      <label for="f-phone">Your phone</label>
+      <input id="f-phone" name="phone" type="tel" placeholder="e.g. 0803 000 0000" required>
+      <button class="btn" type="submit">Request booking on WhatsApp</button>
+      <p class="form-note">Demo form - it opens WhatsApp with a pre-filled message. Nothing is sent until you tap send in WhatsApp.</p>
+    </form>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="studio">
+    <div class="row">
+      <span><b>Studio</b> 31 Wellington Bassey Way, Uyo</span>
+      <span><b>Open</b> Tue - Sat, 9:00 - 18:00</span>
+      <span><b>Events</b> any day, booked ahead</span>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    LensCraft Studio is a fictional demo. Website designed by
+    <a href="https://excellus-solutionz.netlify.app/" target="_blank" rel="noopener">Excellus Tech Solutionz</a>, Uyo ·
+    WhatsApp <a href="https://wa.me/2347034678518" target="_blank" rel="noopener">0703 467 8518</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('bookForm').addEventListener('submit', function(ev){
+  ev.preventDefault();
+  var f = ev.target;
+  var msg = 'Hello LensCraft! I would like to book:\n'
+    + 'Name: ' + f.name.value + '\n'
+    + 'Session: ' + f.session.value + '\n'
+    + 'Preferred: ' + f.when.value + '\n'
+    + 'Phone: ' + f.phone.value;
+  window.open('https://wa.me/2347034678518?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>
