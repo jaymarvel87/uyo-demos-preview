@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thread &amp; Press - Tailoring, Alterations &amp; Laundry in Uyo</title>
+<meta name="description" content="Thread & Press is a fictional demo tailoring and laundry website designed as a sample for local businesses in Uyo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1f1020;
+  --muted:#74606f;
+  --accent:#be185d;
+  --tint:#fdf3f7;
+  --line:#f0dde6;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{font-family:'Sora',system-ui,-apple-system,sans-serif;background:#fff;color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit}
+.wrap{width:min(1080px,92%);margin:0 auto}
+
+.demo-strip{background:var(--ink);color:#fff;text-align:center;font-size:.7rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:.5rem 1rem}
+
+/* header */
+.hdr{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:1.2rem 0;border-bottom:1px solid var(--line)}
+.wordmark{font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:-.02em;white-space:nowrap}
+.wordmark i{font-style:normal;color:var(--accent)}
+.hdr nav{display:flex;gap:14px;align-items:center}
+.hdr nav a{font-size:.8rem;font-weight:600;text-decoration:none;white-space:nowrap}
+.hdr nav a:hover{color:var(--accent)}
+.hdr nav .wa{color:var(--accent);border-bottom:2px solid var(--accent);padding-bottom:1px}
+
+/* intro */
+.intro{padding:2.4rem 0 2rem;max-width:46rem}
+.intro h1{font-weight:800;font-size:clamp(1.7rem,4.6vw,2.6rem);line-height:1.12;letter-spacing:-.02em;margin-bottom:.7rem}
+.intro p{color:var(--muted)}
+
+/* two trades */
+.trades{display:grid;gap:14px;padding-bottom:2.4rem}
+@media(min-width:760px){.trades{grid-template-columns:1fr 1fr}}
+.trade{border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.trade img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.trade .pad{padding:1.2rem 1.2rem 1.4rem}
+.trade h2{font-size:1.15rem;font-weight:800;margin-bottom:.2rem}
+.trade h2 span{color:var(--accent)}
+.trade .sub2{font-size:.84rem;color:var(--muted);margin-bottom:1rem}
+.trow{display:flex;justify-content:space-between;align-items:baseline;gap:.8rem;padding:.6rem 0;border-top:1px dashed var(--line)}
+.trow .t{font-size:.92rem;font-weight:600}
+.trow .t small{display:block;font-weight:400;color:var(--muted);font-size:.78rem}
+.trow .p{font-weight:800;font-size:.92rem;white-space:nowrap;text-align:right}
+.trow .p small{display:block;font-weight:400;color:var(--muted);font-size:.72rem}
+
+/* how it works */
+.how{background:var(--tint);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:2.4rem 0}
+.how h2{font-size:1.3rem;font-weight:800;margin-bottom:1.2rem}
+.steps{display:grid;gap:1.2rem}
+@media(min-width:700px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step .n{font-weight:800;font-size:2rem;color:var(--accent);line-height:1}
+.step b{display:block;margin:.3rem 0 .2rem}
+.step p{font-size:.86rem;color:var(--muted)}
+
+/* recent makes */
+.makes{padding:2.4rem 0}
+.makes h2{font-size:1.3rem;font-weight:800;margin-bottom:.2rem}
+.makes .sub2{font-size:.86rem;color:var(--muted);margin-bottom:1.2rem}
+.mk{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.mk img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}
+
+/* order */
+.order{padding:0 0 2.6rem}
+.order-grid{display:grid;gap:1.6rem}
+@media(min-width:760px){.order-grid{grid-template-columns:1fr 1fr}}
+.order form{border:1px solid var(--line);border-radius:14px;padding:1.4rem;background:#fff}
+.order h2{font-size:1.3rem;font-weight:800;margin-bottom:.4rem}
+.order .lead{font-size:.9rem;color:var(--muted);margin-bottom:.9rem}
+.order ul{list-style:none;margin-bottom:.4rem}
+.order li{font-size:.86rem;color:#4a3a48;padding:.4rem 0 .4rem 1.3rem;position:relative}
+.order li::before{content:"";position:absolute;left:0;top:.95rem;width:7px;height:7px;background:var(--accent);border-radius:2px}
+label{display:block;font-size:.78rem;font-weight:600;margin:0 0 .3rem}
+input,select{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:8px;font:inherit;background:#fff;margin-bottom:.9rem}
+input:focus,select:focus{outline:2px solid var(--accent);border-color:transparent}
+.btn{display:inline-block;background:var(--accent);color:#fff;font-weight:700;font-size:.9rem;padding:13px 26px;border-radius:8px;border:none;cursor:pointer;width:100%}
+.btn:hover{background:#9d174d}
+.form-note{font-size:.78rem;color:var(--muted);margin-top:.7rem}
+
+/* info */
+.info{border-top:1px solid var(--line);padding:2rem 0 2.4rem}
+.info dl{display:grid;gap:1rem}
+@media(min-width:700px){.info dl{grid-template-columns:repeat(3,1fr)}}
+.info dt{font-weight:800;font-size:.92rem}
+.info dd{font-size:.86rem;color:var(--muted)}
+.info a{color:var(--accent);font-weight:600}
+
+footer{border-top:1px solid var(--line);padding:1.6rem 0 2.2rem;font-size:.78rem;color:var(--muted);text-align:center}
+footer a{color:var(--accent)}
+</style>
+</head>
+<body>
+
+<div class="demo-strip">Demo website - a sample for local businesses</div>
+
+<div class="wrap">
+  <header class="hdr">
+    <a class="wordmark" href="#top">Thread <i>&amp;</i> Press</a>
+    <nav>
+      <a href="#trades">What we do</a>
+      <a href="#order">Book</a>
+      <a class="wa" href="https://wa.me/2347034678518" target="_blank" rel="noopener">WhatsApp</a>
+    </nav>
+  </header>
+
+  <section class="intro" id="top">
+    <h1>A tailor shop and a laundry under one roof in Uyo.</h1>
+    <p>Bespoke native wear, sharp alterations and a 48-hour wash-and-press. Pickup and delivery arranged on WhatsApp.</p>
+  </section>
+
+  <section class="trades" id="trades">
+    <div class="trade">
+      <img src="https://images.unsplash.com/photo-1687422808289-e721259c9eb4?auto=format&fit=crop&w=800&q=80" alt="Tailor working on a sewing machine" fetchpriority="high">
+      <div class="pad">
+        <h2>The tailor shop <span>/</span> sewing</h2>
+        <p class="sub2">Bring your fabric or choose from ours. One fitting, about 15 minutes.</p>
+        <div class="trow"><div class="t">Bespoke native wear<small>Senator, agbada and two-piece sets.</small></div><div class="p">from ₦25,000<small>5 - 7 days</small></div></div>
+        <div class="trow"><div class="t">Occasion dresses<small>Aso-ebi, dinner and church dresses, fitted to you.</small></div><div class="p">from ₦30,000<small>7 days</small></div></div>
+        <div class="trow"><div class="t">Alterations<small>Tapering, hemming, zip and button fixes.</small></div><div class="p">from ₦1,500<small>same day</small></div></div>
+      </div>
+    </div>
+    <div class="trade">
+      <img src="https://images.unsplash.com/photo-1714321960831-c8753b534400?auto=format&fit=crop&w=800&q=80" alt="Person ironing a white shirt" loading="lazy">
+      <div class="pad">
+        <h2>The laundry <span>/</span> wash &amp; press</h2>
+        <p class="sub2">Returned hung and bagged. Express same-day pressing available.</p>
+        <div class="trow"><div class="t">Wash &amp; press<small>Wash, starch and press.</small></div><div class="p">from ₦500<small>per item · 48 hrs</small></div></div>
+        <div class="trow"><div class="t">Dry cleaning<small>Suits, delicate fabrics and heavy drapes.</small></div><div class="p">from ₦2,500<small>3 days</small></div></div>
+        <div class="trow"><div class="t">Pickup &amp; delivery<small>We collect and return anywhere in Uyo.</small></div><div class="p">₦1,000<small>same day</small></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<section class="how">
+  <div class="wrap">
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><b>Message us</b><p>Send what you need on WhatsApp - sewing, alterations or laundry. We confirm price and timing.</p></div>
+      <div class="step"><div class="n">2</div><b>We collect or you walk in</b><p>Pickup anywhere in Uyo, or come to the shop on Abak Road. Fittings take about 15 minutes.</p></div>
+      <div class="step"><div class="n">3</div><b>Collect or we deliver</b><p>Laundry is back in 48 hours. New sewing is ready in 5 - 7 days with one fitting in between.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <section class="makes">
+    <h2>Recent makes &amp; presses</h2>
+    <p class="sub2">A few pieces off the table this month.</p>
+    <div class="mk">
+      <img src="https://images.unsplash.com/photo-1663044023437-6b3f9be28a90?auto=format&fit=crop&w=500&q=80" alt="Woman in a bright yellow African print dress" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1552710307-537199cd41c0?auto=format&fit=crop&w=500&q=80" alt="Colourful African print textiles folded in a stack" loading="lazy">
+      <img src="https://images.unsplash.com/photo-1790943780822-9918073fe9f1?auto=format&fit=crop&w=500&q=80" alt="Two women sewing patterned dresses" loading="lazy">
+    </div>
+  </section>
+
+  <section class="order" id="order">
+    <div class="order-grid">
+      <div>
+        <h2>Book a pickup or fitting</h2>
+        <p class="lead">Tell us what you need and where to collect. We confirm on WhatsApp the same day.</p>
+        <ul>
+          <li>Laundry picked up before noon is back in 48 hours.</li>
+          <li>Bespoke pieces need one fitting - bring your fabric or choose from ours.</li>
+          <li>No deposit for laundry; 50% deposit for new sewing.</li>
+        </ul>
+      </div>
+      <form id="orderForm">
+        <label for="f-name">Your name</label>
+        <input id="f-name" name="name" type="text" placeholder="e.g. Ofonime" required>
+        <label for="f-service">What do you need?</label>
+        <select id="f-service" name="service" required>
+          <option value="">Choose one</option>
+          <option>Bespoke native wear - from ₦25,000</option>
+          <option>Occasion dress - from ₦30,000</option>
+          <option>Alterations - from ₦1,500</option>
+          <option>Wash &amp; press - from ₦500/item</option>
+          <option>Dry cleaning - from ₦2,500</option>
+          <option>Pickup &amp; delivery</option>
+        </select>
+        <label for="f-when">When should we collect / when are you coming?</label>
+        <input id="f-when" name="when" type="text" placeholder="e.g. Tomorrow, 11 AM" required>
+        <label for="f-phone">Your phone</label>
+        <input id="f-phone" name="phone" type="tel" placeholder="e.g. 0803 000 0000" required>
+        <button class="btn" type="submit">Send on WhatsApp</button>
+        <p class="form-note">Demo form - it opens WhatsApp with a pre-filled message. Nothing is sent until you tap send in WhatsApp.</p>
+      </form>
+    </div>
+  </section>
+
+  <section class="info">
+    <dl>
+      <div><dt>The shop</dt><dd>17 Abak Road, Uyo,<br>Akwa Ibom State</dd></div>
+      <div><dt>Hours &amp; walk-ins</dt><dd>Mon - Sat, 8:00 - 19:00. Walk in any day - no appointment for fittings.</dd></div>
+      <div><dt>WhatsApp</dt><dd><a href="https://wa.me/2347034678518" target="_blank" rel="noopener">0703 467 8518</a><br>Orders, pickups, price checks.</dd></div>
+    </dl>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    Thread &amp; Press is a fictional demo. Website designed by
+    <a href="https://excellus-solutionz.netlify.app/" target="_blank" rel="noopener">Excellus Tech Solutionz</a>, Uyo ·
+    WhatsApp <a href="https://wa.me/2347034678518" target="_blank" rel="noopener">0703 467 8518</a>
+  </div>
+</footer>
+
+<script>
+document.getElementById('orderForm').addEventListener('submit', function(ev){
+  ev.preventDefault();
+  var f = ev.target;
+  var msg = 'Hello Thread & Press!\n'
+    + 'Name: ' + f.name.value + '\n'
+    + 'I need: ' + f.service.value + '\n'
+    + 'When: ' + f.when.value + '\n'
+    + 'Phone: ' + f.phone.value;
+  window.open('https://wa.me/2347034678518?text=' + encodeURIComponent(msg), '_blank');
+});
+</script>
+</body>
+</html>
